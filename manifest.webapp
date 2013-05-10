@@ -1,0 +1,20 @@
+{
+    "version": "1",
+    "name": "Firefox OS Boilerplate App",
+    "launch_path": "/Firefox-OS-Boilerplate-App/index.html",
+    "description": "Boilerplate Firefox OS app with example use cases to get started",
+    "icons": {
+        "128": "/Firefox-OS-Boilerplate-App/images/logo128.png"
+    },
+    "developer": {
+        "name": "Robert Nyman",
+        "url": "http://robertnyman.com"
+    },
+    "installs_allowed_from": ["*"],
+    "default_locale": "en",
+    "permissions": {
+        "desktop-notification": {
+            "description" : "To show notifications"
+        }
+    }
+}
