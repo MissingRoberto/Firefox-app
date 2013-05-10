@@ -12,32 +12,45 @@
 </head>
 
 <script type="javascript">
+    
+    var alerts= new Array();
+
 
     function creaAlertas(){
 
-    var starttime= 9; 
-    var times=2;
-    var amount = 10;
+        var starttime= 9; 
+        var times=2;
+        var amount = 2;
 
-    var date= new Date();
-    date.setHours(0);
-    date.setSeconds(0);
+        var date= new Date();
+        date.setHours(0);
+        date.setSeconds(0);
 
-    for(i=0; i<amount; i++){
-         var alertDate = new Date(date.getTime()+3600*i*starttime);
-         var alarmId1;
-     }
+        for(i=0; i<amount; i++){
+            var alertDate = new Date(date.getTime()+3600*i*starttime);
+            var alarmId1;
 
-    var request = navigator.mozAlarms.add(alertDate, "ignoreTimezone", { mydata: "bar" });
-    request.onsuccess = function (e) { alarmId1 = e.target.result; };
-    request.onerror = function (e) { alert(e.target.error.name); };
+            var request = navigator.mozAlarms.add(alertDate, "ignoreTimezone", { mydata: "bar" });
 
-
+            request.onsuccess = function (e) { alarmId1 = e.target.result; };
+            request.onerror = function (e) { alert(e.target.error.name); };
+            alerts.add(alertId);
+        }
+    function eliminaAlertas(){
+        for(i= 0; i<list.length; i++){
+            navigator.mozAlarms.remove(list.get(i));
+        }
     }
-
    
 
     }
+
+    var date= new Date();
+
+    var alertDate = new Date(date.getTime()+5000);
+            var alarmId1;
+
+            var request = navigator.mozAlarms.add(alertDate, "ignoreTimezone", { mydata: "bar" });
     
 </script>
 <body>
