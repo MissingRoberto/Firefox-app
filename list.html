@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html>
 
@@ -49,3 +50,47 @@
 
 </body>
 </html>
+=======
+<html>
+	<head>
+	    <meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width">
+	    <link rel="stylesheet" type="text/css" href="css/base.css">
+	    <link rel="stylesheet" type="text/css" href="css/headers.css">
+	    <link rel="stylesheet" type="text/css" href="css/buttons.css">
+	    <link rel="stylesheet" type="text/css" href="css/toolbars.css">
+	    <title>Gestor de pastillas</title>
+	</head>	
+	<body>
+		<header>
+			<h1>Lista de pastillas</h1>
+       		<span id="message"></span>
+       	</header><section id="main">
+			<ul id="editableList" contenteditable="true">
+				<li>Enter To Items Here</li>
+			</ul>
+		</section>
+		
+		<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+		<script type="text/javascript">
+ 			 getList();
+
+ 			 $(document).ready(function() {
+
+			var list = document.getElementById('list');
+			
+			$(list).blur(function() {
+				localStorage.setItem('storedList', this.innerHTML);
+			});
+			
+			//when the page loads
+			if(localStorage.getItem('storedList')){
+				list.innerHTML = localStorage.getItem('storedList');
+			}
+			
+		});
+		</script>
+	</body>
+	
+</html>
+>>>>>>> basura
