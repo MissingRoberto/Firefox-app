@@ -11,6 +11,35 @@
     <script src="js/index-logic.js"></script>
 </head>
 
+<script type="javascript">
+
+    function creaAlertas(){
+
+    var starttime= 9; 
+    var times=2;
+    var amount = 10;
+
+    var date= new Date();
+    date.setHours(0);
+    date.setSeconds(0);
+
+    for(i=0; i<amount; i++){
+         var alertDate = new Date(date.getTime()+3600*i*starttime);
+         var alarmId1;
+     }
+
+    var request = navigator.mozAlarms.add(alertDate, "ignoreTimezone", { mydata: "bar" });
+    request.onsuccess = function (e) { alarmId1 = e.target.result; };
+    request.onerror = function (e) { alert(e.target.error.name); };
+
+
+    }
+
+   
+
+    }
+    
+</script>
 <body>
     <h1 id="pill_title"> PARACETAMOL</h1>
 
