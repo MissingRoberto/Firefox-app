@@ -1,10 +1,10 @@
 {
     "version": "1",
     "name": "Firefox OS Boilerplate App",
-    "launch_path": "/Firefox-OS-Boilerplate-App/index.html",
+    "launch_path": "/Firefox-app/index.html",
     "description": "Boilerplate Firefox OS app with example use cases to get started",
     "icons": {
-        "128": "/Firefox-OS-Boilerplate-App/images/logo128.png"
+        "128": "/Firefox-app/images/logo128.png"
     },
     "developer": {
         "name": "Robert Nyman",

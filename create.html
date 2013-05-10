@@ -9,12 +9,36 @@
     <link rel="stylesheet" type="text/css" href="css/buttons.css">
     <link rel="stylesheet" type="text/css" href="css/toolbars.css">
     <title>Firefox OS Boilerplate App</title>
+
+    <link rel="stylesheet" type="text/css" href="shared/style/input_areas.css">
 </head>
 
 <body>
-    <h1 id="pill_title"> </h1>
-   <button id="cross-domain-xhr">Cross-domain XHR</button>
+   <section role="region">
+<header>
+<button><span class="icon icon-close">close</span></button>
+<menu type="toolbar"><button>done</button></menu>
+<h1>Title</h1>
+</header>
+<header>
+<h2>Subheader text</h2>
+</header>
+</section>
 
+
+    <form>
+    <p>
+    <input placeholder="Placeholder" required="" type="text">
+    <button type="reset">Clear</button>
+    </p>
+    <p>
+    <textarea placeholder="Placeholder in textarea" required=""></textarea>
+    </p>
+    <p>
+    <input placeholder="Placeholder" value="Some written text" required="" type="text">
+    <button type="reset">Clear</button>
+    </p>
+    </form>
 
     <script type="text/javascript" src="js/base.js"></script>
     <script type="text/javascript" src="js/webapp.js"></script>
