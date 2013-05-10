@@ -10,6 +10,8 @@
     <link rel="stylesheet" type="text/css" href="css/input_areas.css">
     <link rel="stylesheet" type="text/css" href="css/headers.css">
     <link rel="stylesheet" type="text/css" href="css/create.css">
+  <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="js/logic.js"></script>
 </head>
 
 <body>
@@ -17,7 +19,7 @@
 <header>
 <menu type="toolbar">
 <a href="index.html"><span class="icon icon-edit">edit</span></a>
-<a href="index.html"><span class="icon icon-add">add</span></a>
+<a href="index.html"><span class="icon icon-add" id="add_button">add</span></a>
 </menu>
 <h1>Pastillas</h1>
 </header>
@@ -27,7 +29,7 @@
         <h2>Nombre</h2>
 
     <p>
-    <input placeholder="Placeholder" required="true" type="text">
+    <input placeholder="nombre" required="true" type="text" id="name">
     <button type="reset">Clear</button>
     </p>
     
@@ -35,7 +37,7 @@
         <h2>Cantidad</h2>
 
     <p>
-    <input placeholder="Placeholder" required="true" type="number">
+    <input placeholder="cantidad" required="true" type="number" id="amount">
     <button type="reset">Clear</button>
     </p>
 
@@ -43,10 +45,27 @@
         <h2>Fecha caducidad</h2>
 
     <p>
-    <input placeholder="Placeholder" required="true" type="text">
+    <input placeholder="caducidad" required="true" type="text" id="date">
     <button type="reset">Clear</button>
     </p>
     
+
+    <form>
+        <h2>Veces al dia</h2>
+
+    <p>
+    <input placeholder="veces" required="true" type="number" id="times">
+    <button type="reset">Clear</button>
+    </p>
+
+    <form>
+        <h2>Hora de comienzo</h2>
+
+    <p>
+    <input placeholder="hora de comienzo" required="true" type="number" id="start-time">
+    <button type="reset">Clear</button>
+    </p>
+
     </form>
 
 
