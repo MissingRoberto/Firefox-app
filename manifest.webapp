@@ -1,8 +1,14 @@
 {
     "version": "1",
+<<<<<<< HEAD
     "name": "Firefox OS Boilerplate App",
     "launch_path": "/list.html",
     "description": "Boilerplate Firefox OS app with example use cases to get started",
+=======
+    "name": "Administrador de pastillas",
+    "launch_path": "/create.html",
+    "description": "Administrador de pastillas",
+>>>>>>> mas basura
     "icons": {
         "128": "/Firefox-app/images/logo128.png"
     },
