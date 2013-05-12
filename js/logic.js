@@ -4,6 +4,7 @@ $(document).ready(){
 		//var json = { 'name': $("#name")[0].value, 'amount': $("#amount")[0].value, 'date': $("#name")[0].value };
 
 		//localStorage.setItem('json', JSON.stringify(testObject));
+		alert("add");
 		});
 
 

@@ -3,72 +3,125 @@
 
 <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="css/util.css">
     <meta name="viewport" content="width=device-width">
-    <link rel="stylesheet" type="text/css" href="css/buttons.css">
-    <link rel="stylesheet" type="text/css" href="css/headers.css">
-    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style/buttons.css">
+    <link rel="stylesheet" type="text/css" href="css/style/headers.css">
+ 
+    <link rel="stylesheet" type="text/css" href="css/cross_browser.css">
+   
+    <link rel="stylesheet" type="text/css" href="css/style_unstable/toolbars.css">
+    <link rel="stylesheet" type="text/css" href="css/icons/styles/action_icons.css">
+    <link rel="stylesheet" type="text/css" href="css/icons/styles/media_icons.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
     <title>Firefox OS Boilerplate App</title>
+   <script src="js/jquery-latest.min.js"></script>
     <script src="js/index-logic.js"></script>
+
+    
+   
+
 </head>
 
-<script type="javascript">
+<script>
     
     var alerts= new Array();
+    var drugs = new Array();
 
+    function createAlerts(){
 
-    function creaAlertas(){
+        for(i in drugs){
+            createAlert(drugs[i]);
+        }
+    }
 
-        var starttime= 9; 
-        var times=2;
-        var amount = 2;
+    function createAlert(drug){
 
         var date= new Date();
         date.setHours(0);
         date.setSeconds(0);
 
-        for(i=0; i<amount; i++){
-            var alertDate = new Date(date.getTime()+3600*i*starttime);
-            var alarmId1;
+        for(i=0; i<drug.amount; i++){
+            var alertDate = new Date(date.getTime()+3600*i*drug.start_time);
+            var alarmId;
 
             var request = navigator.mozAlarms.add(alertDate, "ignoreTimezone", { mydata: "bar" });
 
-            request.onsuccess = function (e) { alarmId1 = e.target.result; };
+            request.onsuccess = function (e) { alarmId = e.target.result;  };
             request.onerror = function (e) { alert(e.target.error.name); };
             alerts.add(alertId);
         }
-    function eliminaAlertas(){
-        for(i= 0; i<list.length; i++){
-            navigator.mozAlarms.remove(list.get(i));
-        }
+
     }
+    function deleteAlerts(){
+        for(i= 0; i<alerts.length; i++){
+            navigator.mozAlarms.remove(alerts.get(i));
+        }
+        alerts.clear();
+    }
+
+var date = new Date()
+  var alarmId1;
+ var request = navigator.mozAlarms.add(new Date(date.getMilliseconds+3000), "ignoreTimezone", { mydata: "bar" });
+ request.onsuccess = function (e) { alarmId1 = e.target.result; };
+ request.onerror = function (e) { alert(e.target.error.name); };
+
+navigator.mozSetMessageHandler("alarm", function (message) { alert("alarm fired: " + JSON.stringify(message)); });
+
+    // function addDrug(name, amount, stock,date, times, start_time){
+    //     var drug = {"name":name,"amount": amount,"stock":stock, "date": date,"times": times, "start_time": start_time};
+    //     drugs.push(drug);
+    // }
+    
    
 
-    }
+   // addDrug("a","b","c","d","e","f");
+   // addDrug("b","b","c","d","e","f");
+  
+   //  // Guardar los objetos en el localStorage
 
-    var date= new Date();
+   // localStorage.setItem('drugs', JSON.stringify(drugs));
 
-    var alertDate = new Date(date.getTime()+5000);
-            var alarmId1;
+   // var drugsJson = eval(localStorage.getItem('drugs'));
 
-            var request = navigator.mozAlarms.add(alertDate, "ignoreTimezone", { mydata: "bar" });
+  
+  //Access example
+//     alert(JSON.stringify(drugsJson));
+//     for(i in drugsJson){
+//         alert(drugsJson[i].name);
+//     }
+
+
+  
+
+   
     
 </script>
+
 <body>
-    <h1 id="pill_title"> PARACETAMOL</h1>
+    <div id="content">
 
+        <button id="call_button"  ></button>
+        <div id="medicament_alert">
+            <h1 id="pill_title" class="pill-data"><b>PARACETAMOL</b></h1>
+            <h1 id="pill_amount" class="pill-data">2 unidades</h1>
 
+            <a class="recommend" role="button" id="ok_button" href="#">Tomado</a>
+            <button class="danger" id="problem_button" >No he podido</button>
 
-   <a class="recommend" role="button" id="ok_button" href="#">Me la he tomado</a>
+        </div>
 
-   <button class="danger" id="problem_button" >No he podido</button>
-
-    <script type="text/javascript" src="js/base.js"></script>
-    <script type="text/javascript" src="js/webapp.js"></script>
-    <script type="text/javascript" src="js/offline.js"></script>
-
-    <!-- 
-        Loosely based on fxosstub: https://github.com/Jaxo/fxosstub
-    -->
-
+    
+    </div>
+     <footer>
+        <div role="toolbar">
+            <ul>
+                
+                <li> <button id="settings_button" class="action-icon settings"> </button></li>
+                <li> <button id="list_button" class="action-icon menu"> </button></li>
+               
+            </ul>
+        </div>
+    </footer>
 </body>
 </html>

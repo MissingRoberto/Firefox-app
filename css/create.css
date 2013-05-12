@@ -1,9 +1,24 @@
 h2 {
 	text-align: center;
-	color: white;
-
+	font-size: 2rem;
+	
 }
 
-body{
-	background-color: black;
+
+body {
+	
+	padding: 0rem;
+	overflow: scroll;
+}
+
+#content{
+	padding: 2rem;
+	padding-top:5rem;
+}
+
+#header{
+	top:0;
+	position: fixed;
+    width: 100%;
+
 }

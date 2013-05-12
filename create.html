@@ -11,78 +11,77 @@
     <link rel="stylesheet" type="text/css" href="css/style/input_areas.css">
     <link rel="stylesheet" type="text/css" href="css/style/headers.css">
     <link rel="stylesheet" type="text/css" href="css/create.css">
-  <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-    <script src="js/logic.js"></script>
+    <script src="js/jquery-latest.min.js"></script>
+    <script src="js/create-logic.js"></script>
 </head>
 
+
 <body>
-    <section role="region" class="skin-organic">
-      <header>
-        <button><span class="icon icon-close">close</span></button>
-        <menu type="toolbar"><button>done</button></menu>
-        <h1>Title</h1>
+    <section id="header" role="region" >
+      <header >
+        <button onclick="window.location.href = 'list.html';"><span class="icon icon-close">close</span></button>
+        <menu type="toolbar"><button id="create_button" >done</button></menu>
+        <h1>Nuevo</h1>
       </header>
     </section>
+    <div id="content">
+        
+        <form action="list.html">
+            <h2>Nombre</h2>
 
-    <form>
-        <h2>Nombre</h2>
+        <p>
+        <input placeholder="nombre" required="true" type="text" id="name">
+        <button type="reset">Clear</button>
+        </p>
+  
+            <h2>Cantidad a tomar</h2>
 
-    <p>
-    <input placeholder="nombre" required="true" type="text" id="name">
-    <button type="reset">Clear</button>
-    </p>
+        <p>
+        <input placeholder="cantidad a tomar" required="true" type="number" id="amount">
+        <button type="reset">Clear</button>
+        </p>
+
+     
+            <h2>Stock</h2>
+
+        <p>
+        <input placeholder="stock" required="true" type="number" id="stock">
+        <button type="reset">Clear</button>
+        </p>
+
+       
+            <h2>Fecha caducidad</h2>
+
+        <p>
+        <input placeholder="XX-MM-AAAA" required="true" type="text" id="date">
+        <button type="reset">Clear</button>
+        </p>
+        
+
+      
+            <h2>Veces al dia</h2>
+
+        <p>
+        <input placeholder="veces" required="true" type="number" id="times">
+        <button type="reset">Clear</button>
+        </p>
+
+       
+            <h2>Hora de comienzo</h2>
+
+        <p>
+        <input placeholder="hora de comienzo" required="true" type="number" id="start_time">
+        <button type="reset">Clear</button>
+        </p>
+
+        </form>
     
-    <form>
-        <h2>Cantidad a tomar</h2>
+    </div>
 
-    <p>
-    <input placeholder="cantidad a tomar" required="true" type="number" id="amount">
-    <button type="reset">Clear</button>
-    </p>
-
-    <form>
-        <h2>Stock</h2>
-
-    <p>
-    <input placeholder="stock" required="true" type="number" id="amount">
-    <button type="reset">Clear</button>
-    </p>
-
-    <form>
-        <h2>Fecha caducidad</h2>
-
-    <p>
-    <input placeholder="caducidad" required="true" type="text" id="date">
-    <button type="reset">Clear</button>
-    </p>
     
-
-    <form>
-        <h2>Veces al dia</h2>
-
-    <p>
-    <input placeholder="veces" required="true" type="number" id="times">
-    <button type="reset">Clear</button>
-    </p>
-
-    <form>
-        <h2>Hora de comienzo</h2>
-
-    <p>
-    <input placeholder="hora de comienzo" required="true" type="number" id="start-time">
-    <button type="reset">Clear</button>
-    </p>
-
-    </form>
-
-
-    <script type="text/javascript" src="js/base.js"></script>
-    <script type="text/javascript" src="js/webapp.js"></script>
-    <script type="text/javascript" src="js/offline.js"></script>
-
     <!-- 
         Loosely based on fxosstub: https://github.com/Jaxo/fxosstub
     -->
-
+    
 </body>
 </html>

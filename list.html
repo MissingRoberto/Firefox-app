@@ -1,96 +1,76 @@
-<<<<<<< HEAD
+
 <!DOCTYPE html>
 <html>
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <link rel="stylesheet" type="text/css" href="css/buttons.css">
-    <link rel="stylesheet" type="text/css" href="css/headers.css">
-    <link rel="stylesheet" type="text/css" href="css/lists.css">
-  
+    <link rel="stylesheet" type="text/css" href="css/style/buttons.css">
+    <link rel="stylesheet" type="text/css" href="css/style/headers.css">
+    <link rel="stylesheet" type="text/css" href="css/util.css">
+
+    <link rel="stylesheet" type="text/css" href="css/style_unstable/lists.css">
+        <link rel="stylesheet" type="text/css" href="css/style_unstable/toolbars.css">
+    <link rel="stylesheet" type="text/css" href="css/icons/styles/action_icons.css">
+    <link rel="stylesheet" type="text/css" href="css/icons/styles/media_icons.css">
+    <link rel="stylesheet" type="text/css" href="css/style/edit_mode.css">
+     <link rel="stylesheet" type="text/css" href="css/list.css">
+	<script src="js/jquery-latest.min.js"></script>
+    <script src="js/list-logic.js"></script>
     <title>Firefox OS Boilerplate App</title>
    
 </head>
 
+
 <body>
     
- 
+    <section role="region" >
+      <header>
+        <button onclick="window.location.href = 'index.html';"><span class="icon icon-back">close</span></button>
+        <menu type="toolbar">
+            <a href="create.html"><span class="icon icon-add">add</span></a>
+        </menu>
+           
+        <h1>Medicamentos</h1>
+      </header>
+    </section>
+ <div id="content">
+    <section data-type="list">
 
-
-      <section data-type="list">
-    <header>Medicamentos</header>
-
-    <ul>
-    <li>
-         <a href="#">
-    <p>Paracetamol </strong></p>
-    <p>Stock: 5</p>
-</a>
-    </li>
-
-    <li>
-         <a href="#">
-    <p>Gelocatil</strong></p>
-    <p>Stock: 5</p>
-    </a>
-    </li>
-   
+    <ul id="list">
+      
     </ul>
     </section>
 
-    <script type="text/javascript" src="js/base.js"></script>
-    <script type="text/javascript" src="js/webapp.js"></script>
-    <script type="text/javascript" src="js/offline.js"></script>
+</div>
+    <form id="edit_mode" role="dialog" onsubmit="return false;" data-type="edit">
+    <section>
+    <header>
+    <button><span class="icon icon-close">close</span></button>
+    <menu type="toolbar"><button id="done_delete_button">done</button></menu>
+    <h1>Edit</h1>
+    </header>
+    </section>
+    <menu>
+    <button id="delete_all_button">Delete all</button>
+    <button id="delete_selected_button">Delete selected</button>
+    </menu>
+    </form>
 
 
-    <!-- 
-        Loosely based on fxosstub: https://github.com/Jaxo/fxosstub
-    -->
+    
+
+    <footer>
+        <div role="toolbar">
+            <ul>
+                
+                <li> <button id="settings_button" class="action-icon settings"> </button></li>
+                  <li> <button id="delete_button" class="action-icon delete"> </button></li>
+               
+            </ul>
+        </div>
+    </footer>
 
 </body>
 </html>
-=======
-<html>
-	<head>
-	    <meta charset="utf-8">
-	    <meta name="viewport" content="width=device-width">
-	    <link rel="stylesheet" type="text/css" href="css/base.css">
-	    <link rel="stylesheet" type="text/css" href="css/headers.css">
-	    <link rel="stylesheet" type="text/css" href="css/buttons.css">
-	    <link rel="stylesheet" type="text/css" href="css/toolbars.css">
-	    <title>Gestor de pastillas</title>
-	</head>	
-	<body>
-		<header>
-			<h1>Lista de pastillas</h1>
-       		<span id="message"></span>
-       	</header><section id="main">
-			<ul id="editableList" contenteditable="true">
-				<li>Enter To Items Here</li>
-			</ul>
-		</section>
-		
-		<script src="http://code.jquery.com/jquery-latest.min.js"></script>
-		<script type="text/javascript">
- 			 getList();
 
- 			 $(document).ready(function() {
-
-			var list = document.getElementById('list');
-			
-			$(list).blur(function() {
-				localStorage.setItem('storedList', this.innerHTML);
-			});
-			
-			//when the page loads
-			if(localStorage.getItem('storedList')){
-				list.innerHTML = localStorage.getItem('storedList');
-			}
-			
-		});
-		</script>
-	</body>
-	
-</html>
->>>>>>> basura

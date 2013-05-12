@@ -1,23 +1,37 @@
 {
     "version": "1",
-    "name": "Firefox OS Boilerplate App",
-    "launch_path": "/list.html",
-    "description": "Boilerplate Firefox OS app with example use cases to get started",
-    "name": "Administrador de pastillas",
-    "launch_path": "/create.html",
+    "name": "Gestor de pastillas",
+  
+    "launch_path": "/index.html",
     "description": "Administrador de pastillas",
     "icons": {
         "128": "/Firefox-app/images/logo128.png"
     },
     "developer": {
-        "name": "Robert Nyman",
-        "url": "http://robertnyman.com"
+        "name": "Robert Jimenez y Miguel Garrido"
+       
     },
     "installs_allowed_from": ["*"],
     "default_locale": "en",
     "permissions": {
         "desktop-notification": {
             "description" : "To show notifications"
+        },
+        "alarms": {
+            "description" : "To show notifications"
+        },
+        "audio-channel-telephony": {
+            "description" : "To show notifications"
+        },
+        "sms": {
+            "description" : "To show notifications"
+        },"telephony": {
+            "description" : "To show notifications"
         }
-    }
+
+    },
+
+     "messages": [
+     { "alarm": "/index.html" }
+  ]
 }
